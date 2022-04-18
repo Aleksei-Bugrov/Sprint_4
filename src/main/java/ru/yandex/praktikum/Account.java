@@ -12,7 +12,12 @@ public class Account {
 
     public boolean checkNameToEmboss() {
         Pattern pattern = Pattern.compile("^(?=.{3,19}$)[а-яА-ЯёЁ]+\\s{1}[а-яА-ЯёЁ]+$");
+        if (name == null) {
+            return false;
+        }
+        else {
         Matcher matcher = pattern.matcher(name);
         return matcher.matches();
+        }
     }
 }
